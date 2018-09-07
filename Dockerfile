@@ -19,7 +19,7 @@ RUN apt-get update && \
   apt-get update && \
   apt-get install -y --no-install-recommends oracle-java8-installer oracle-java8-set-default && \
   apt-get clean all
-  
+
 # Add a jhipster user to run our application so that it doesn't need to run as root
 RUN apt-get update && \
       apt-get -y install sudo
@@ -39,7 +39,7 @@ RUN sudo apt-get install -y mongodb-org
 RUN sudo mkdir /data
 RUN sudo mkdir /data/db
 RUN sudo mkdir /data/db/log
-#RUN sudo service mongod start
+RUN screen mongod
 EXPOSE 27017
 
 WORKDIR /home/jhipster
