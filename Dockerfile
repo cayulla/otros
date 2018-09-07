@@ -36,9 +36,9 @@ RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mo
 RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
 
-RUN sudo mkdir /data
-RUN sudo mkdir /data/db
-RUN sudo mkdir /data/db/log
+RUN sudo mkdir -m 777 /data
+RUN sudo mkdir -m 777 /data/db
+RUN sudo mkdir -m 777 /data/db/log
 #RUN screen mongod
 EXPOSE 27017
 
