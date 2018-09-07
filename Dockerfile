@@ -23,7 +23,7 @@ RUN sudo apt-get install -y mongodb-org
 RUN sudo mkdir /data
 RUN sudo mkdir /data/db
 RUN sudo mkdir /data/db/log
-RUN mongod
+RUN sudo service mongod start
 
 WORKDIR /home/jhipster
 
