@@ -19,9 +19,6 @@ RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA3162033
 RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
-RUN mkdir /data/db
-RUN mkdir /data/db/log
-RUN mongod --dbpath data/db --fork --logpath data/db/log
 RUN mongod
 
 WORKDIR /home/jhipster
