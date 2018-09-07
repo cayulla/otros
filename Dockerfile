@@ -7,7 +7,7 @@ ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
 # Add a jhipster user to run our application so that it doesn't need to run as root
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
-RUN adduser --disabled-password --gecos "" jhipster && \
+RUN sudo adduser --disabled-password --gecos "" jhipster && \
 sudo usermod --shell /bin/sh jhipster
 
 RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list && \
